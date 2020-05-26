@@ -3,7 +3,7 @@ import Layout from './containers/Layout';
 import Login from './containers/auth/Login';
 import Register from './containers/auth/Register';
 import Logout from './containers/auth/Logout'
-import {BrowserRouter as Router,  Redirect} from "react-router-dom";
+import {BrowserRouter as Router,  Redirect, Switch} from "react-router-dom";
 import PrivateRoute  from './components/routes/PrivateRoute'
 import PublicRoute  from './components/routes/PublicRoute'
 import * as ROUTES from './constants/routes'
@@ -15,6 +15,7 @@ import ActiveTodos from './containers/todos/ActiveTodos';
 import AllTodos from './containers/todos/AllTodos';
 import CompletedTodos from './containers/todos/CompletedTodos';
 
+
 const App = ({initFirebase, isFirebaseloaded}) => {
 
     useEffect(() => {
@@ -25,19 +26,21 @@ const App = ({initFirebase, isFirebaseloaded}) => {
         return (
             <Router>
                 <Layout>
-                        <PrivateRoute exact path={ROUTES.TODOS} component={AllTodos} />
+                     <Switch>
 
-                        <Redirect path={ROUTES.HOME} to={AllTodos} />
+                        <PrivateRoute exact path={ROUTES.HOME} component={AllTodos} />
 
-                        <PrivateRoute  exact path={ROUTES.TODOS + ROUTES.ACTIVE} component={ActiveTodos} />
-                           
-                        <PrivateRoute  exact path={ROUTES.TODOS + ROUTES.COMPLETED} component={CompletedTodos} />
-                           
+                        <PrivateRoute  exact path={ROUTES.ACTIVE} component={ActiveTodos} />
+                        
+                        <PrivateRoute  exact path={ROUTES.COMPLETED} component={CompletedTodos} />
+                        
                         <PublicRoute   exact path={ROUTES.LOGIN} component={Login} />
                             
                         <PublicRoute   exact path={ROUTES.REGISTER} component={Register} />
-                           
+                        
                         <PrivateRoute  exact path={ROUTES.LOGOUT} component={Logout} />  
+
+                     </Switch>   
                 </Layout>
             </Router>
         );
