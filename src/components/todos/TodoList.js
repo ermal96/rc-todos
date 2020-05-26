@@ -6,7 +6,7 @@ import RemoveTodo from '../../utils/todos/removeTodo';
 import MoveTodo from '../../utils/todos/moveTodo';
 import styled from 'styled-components'
 import { useLocation } from "react-router-dom";
-import { TODOS } from '../../constants/routes'
+import { HOME } from '../../constants/routes'
 
 const TodoListWrapper = styled.div`
     margin: 2rem 0;
@@ -38,7 +38,7 @@ const TodoList = ({
     let location = useLocation();
 
     const renderBtn = (item) => {
-        if( location.pathname === TODOS){
+        if( location.pathname === HOME){
             return(
                 <Tag color={item.status === 'ACTIVE' ? 'red': 'green' }>{item.status}</Tag>
             )
