@@ -2,7 +2,7 @@ import {types} from '../actions/actionTypes';
 
 const inittialState = {
     items: [],
-    loading: true,
+    loading: false,
 
 }
 
@@ -13,7 +13,7 @@ export default(state = inittialState, action) => {
         case types.FETCH_TODOS:
             return Object.assign({}, state, {
                 items: action.payload,
-                loading: false
+                loading: action.loading
             });
 
 

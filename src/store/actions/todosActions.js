@@ -66,6 +66,10 @@ export const fetchTodos = (status) => async (dispatch, getState) => {
 
     const userId = getState().firebase.user.uid;
 
+    dispatch({
+        type: types.FETCH_TODOS, 
+        loading: true
+    });
 
     if(status){
         Firestore.collection('todos').where("status", "==", status ).where("userId", "==", userId).orderBy('date', 'desc').get().then(res => {  
@@ -81,7 +85,8 @@ export const fetchTodos = (status) => async (dispatch, getState) => {
 
             dispatch({
                 type: types.FETCH_TODOS, 
-                payload: data
+                payload: data,
+                loading: false
             });
 
         })
@@ -99,7 +104,8 @@ export const fetchTodos = (status) => async (dispatch, getState) => {
 
             dispatch({
                 type: types.FETCH_TODOS, 
-                payload: data
+                payload: data,
+                loading: false
             });
 
         })
