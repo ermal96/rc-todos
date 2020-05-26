@@ -1,9 +1,9 @@
 import React from 'react'
 import Logo from './Logo';
-import TodoMenu from './TodoMenu'
+import Nav from './Nav'
 import styled from 'styled-components';
 
-const Nav = styled.div`
+const NavWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,10 +13,10 @@ const Nav = styled.div`
 
 const Navigation = () => {
     return (
-        <Nav>
+        <NavWrapper>
             <Logo />
-            <TodoMenu/>
-        </Nav>
+            <Nav/>
+        </NavWrapper>
     )
 }
 
