@@ -5,6 +5,9 @@ import styled from 'styled-components'
 
 const NavItemWrapper = styled.span`
     padding:  0 15px;
+    @media(max-width: 560px){
+        padding:0 5px;
+    }
     a{
         color: unset;
         display: inline-flex;

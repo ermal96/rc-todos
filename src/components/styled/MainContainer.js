@@ -8,6 +8,13 @@ const Container = styled.div`
     background: #fff;
     padding: 3rem;
     border: 1px solid #ededed;
+    @media(max-width: 1300px){
+        margin:0 auto;
+        padding:1rem;
+        border:none;
+        width:100%;
+    }
+
 `;
 
 const MainContainer = ({children}) => {

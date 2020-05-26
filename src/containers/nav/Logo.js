@@ -10,6 +10,9 @@ const LogoWrapper = styled.div`
     h2{
         margin: 0;
         padding-left: 20px;
+        @media(max-width: 560px){
+        display:none
+    }
     }
 
     img{

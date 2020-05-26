@@ -3,7 +3,7 @@ import Layout from './containers/Layout';
 import Login from './containers/auth/Login';
 import Register from './containers/auth/Register';
 import Logout from './containers/auth/Logout'
-import {BrowserRouter as Router,  Redirect, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Switch} from "react-router-dom";
 import PrivateRoute  from './components/routes/PrivateRoute'
 import PublicRoute  from './components/routes/PublicRoute'
 import * as ROUTES from './constants/routes'
@@ -42,6 +42,7 @@ const App = ({initFirebase, isFirebaseloaded}) => {
                         <PublicRoute   exact path={ROUTES.REGISTER} component={Register} />
                         
                         <PrivateRoute  exact path={ROUTES.LOGOUT} component={Logout} />  
+                        {/* <Redirect path={ROUTES.HOME} component={AllTodos} /> */}
 
                      </Switch>   
                 </Layout>

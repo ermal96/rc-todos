@@ -1,4 +1,4 @@
-import {Firebase, Firestore} from '../../config/firebase'
+import {Firebase} from '../../config/firebase'
 import {types} from './actionTypes';
 import {SuccessMsg, ErrorMsg} from '../../utils/helpers/msg'
 
