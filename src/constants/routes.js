@@ -1,4 +1,4 @@
-export const UNDEFINED = '/';
+export const HOME = '/';
 export const REGISTER = '/register';
 export const LOGIN = '/login';
 export const TODOS = '/todos';
