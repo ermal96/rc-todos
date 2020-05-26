@@ -19,13 +19,12 @@ const TodoMenu = ({isAuthenticated}) => {
                 }
                 mode="horizontal">
                 {
-                    isAuthenticated ?  <Menu.Item key="todos"
+                    isAuthenticated ?  <Menu.Item key={ROUTES.HOME}
                     icon={<BarsOutlined />}>
-                    <Link to={ROUTES.TODOS}>Todos</Link>
+                    <Link to={ROUTES.HOME}>Todos</Link>
                      </Menu.Item>: null
                 }
                
-
                 {
                 !isAuthenticated ? <Menu.Item key="login"
                     icon={<UserOutlined/>}>

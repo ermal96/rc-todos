@@ -11,11 +11,11 @@ const FilterMenu = () => {
 
     let defPath = 'allTodos';
     
-    if(location.pathname === ROUTES.TODOS){
+    if(location.pathname === ROUTES.HOME){
         defPath = 'allTodos'
-    }else if (location.pathname === ROUTES.TODOS+ ROUTES.ACTIVE){
+    }else if (location.pathname === ROUTES.ACTIVE){
         defPath = 'active'
-    }else if (location.pathname === ROUTES.TODOS+ ROUTES.COMPLETED){
+    }else if (location.pathname === ROUTES.COMPLETED){
         defPath = 'completed'
     }else {
         defPath = 'allTodos'
@@ -27,17 +27,17 @@ const FilterMenu = () => {
         
         <Menu.Item key="allTodos"
             icon={<DatabaseOutlined />}>
-                <Link to={ROUTES.TODOS}>All</Link>
+                <Link to={ROUTES.HOME}>All</Link>
              </Menu.Item>
 
          <Menu.Item key="active"
             icon={<PlayCircleOutlined />}>
-            <Link to={ROUTES.TODOS + ROUTES.ACTIVE}>Active</Link>
+            <Link to={ROUTES.ACTIVE}>Active</Link>
              </Menu.Item>
 
         <Menu.Item key="completed"
             icon={<CarryOutOutlined/>}>
-            <Link to={ROUTES.TODOS + ROUTES.COMPLETED}>Completed</Link>
+            <Link to={ROUTES.COMPLETED}>Completed</Link>
         </Menu.Item>
 
     </Menu>
