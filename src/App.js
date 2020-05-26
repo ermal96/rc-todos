@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import { initFirebase } from './store/actions/authActions';
 import Loader from './components/styled/Loader';
 
+import Profile from './containers/profile/Profile'
 import ActiveTodos from './containers/todos/ActiveTodos';
 import AllTodos from './containers/todos/AllTodos';
 import CompletedTodos from './containers/todos/CompletedTodos';
@@ -33,6 +34,8 @@ const App = ({initFirebase, isFirebaseloaded}) => {
                         <PrivateRoute  exact path={ROUTES.ACTIVE} component={ActiveTodos} />
                         
                         <PrivateRoute  exact path={ROUTES.COMPLETED} component={CompletedTodos} />
+
+                        <PrivateRoute  exact path={ROUTES.PROFILE} component={Profile} />
                         
                         <PublicRoute   exact path={ROUTES.LOGIN} component={Login} />
                             
