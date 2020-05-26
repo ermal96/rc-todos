@@ -3,11 +3,10 @@ import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { LOGIN } from '../../constants/routes';
 
-const PrivateRoute = ({children, path, to, isAuthenticated}) => {
+const PrivateRoute = ({ path, to, isAuthenticated, component}) => {
     return (
-        isAuthenticated ? <Route to={to} path={path}>
-            {children}
-        </Route>: <Redirect to={LOGIN} /> 
+        isAuthenticated ? <Route to={to} path={path} component={component} />:
+             <Redirect to={LOGIN} /> 
     )
         
 };
