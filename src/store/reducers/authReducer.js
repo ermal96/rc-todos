@@ -31,6 +31,22 @@ export default(state = inittialState, action) => {
                 user: action.payload
             });
 
+        case types.USER_NAME_UPDATED:
+                return {
+                    ...state,
+                    [state.user.displayName]: action.payload
+                }
+
+        case types.USER_EMAIL_UPDATED:
+                return {
+                    ...state,
+                    [state.user.email]: action.payload
+                }
+
+        case types.USER_PASSWORD_UPDATED:
+                return state
+
+
         default:
             return state;
     }
