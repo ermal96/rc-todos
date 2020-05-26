@@ -58,20 +58,21 @@ export const logout = () => async (dispatch, getState) => {
 
 }
 
-
-
 export const initFirebase = () => async dispatch => {
 
     Firebase.auth().onAuthStateChanged((user) => {
-        dispatch({
-            type: types.FIREBASE_LOADED,
-            payload: true
-        })
         if (user) {
             dispatch({
                 type: types.LOGIN_SUCCESS,
                 payload: user
             })
         }
+
+        dispatch({
+            type: types.FIREBASE_LOADED,
+            payload: true
+        })
+
+
       });
 }
