@@ -7,35 +7,24 @@ import {register} from '../../store/actions/authActions'
 const RegisterForm = ({register}) => {
 
     const onFinish = (e) => {
-        register({firstName: e.firstName, lastName: e.lastName, email: e.email, password: e.password})
+        register({displayName: e.displayName, email: e.email, password: e.password})
     }
     return (
         <div className="register-from">
             <Form onFinish={onFinish}>
 
-                <Form.Item hasFeedback name="firstName"
+                <Form.Item hasFeedback name="displayName"
                     rules={
                         [{
                                 required: true,
-                                message: 'Please input your first name!'
+                                message: 'Please input your name!'
                             }]
                 }>
                     <Input prefix={<UserOutlined/>}
-                        placeholder="First Name"
+                        placeholder="Your Name"
                         allowClear/>
                 </Form.Item>
 
-                <Form.Item hasFeedback name="lastName"
-                    rules={
-                        [{
-                                required: true,
-                                message: 'Please input your last name!'
-                            }]
-                }>
-                    <Input prefix={<UserOutlined/>}
-                        placeholder="Last Name"
-                        allowClear/>
-                </Form.Item>
 
                 <Form.Item hasFeedback name="email"
                     rules={
