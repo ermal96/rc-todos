@@ -4,13 +4,13 @@ import 'firebase/firestore'
 
 const config = {
     apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: "rc-todo-4b65c.firebaseapp.com",
-    databaseURL: "https://rc-todo-4b65c.firebaseio.com",
-    projectId: "rc-todo-4b65c",
-    storageBucket: "rc-todo-4b65c.appspot.com",
-    messagingSenderId: "529743216324",
-    appId: "1:529743216324:web:2d2586d769b21d647d1391",
-    measurementId: "G-3HQ0NNTYC2"
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DB_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_ID,
+    measurementId: process.env.REACT_APP_MESUREMENT_ID
 };
 
 firebase.initializeApp(config);
