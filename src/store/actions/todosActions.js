@@ -44,10 +44,11 @@ export const removeTodo = id => async dispatch => {
 // Move Todo
 export const moveTodo = (id, status) => async dispatch => {
     Firestore.collection('todos').doc(id).update({status: status}).then(() => {
-        if (status) {
-            SuccessMsg('Moved to completed ')
-        } else {
+        console.log(status)
+        if (status === 'ACTIVE') {
             SuccessMsg('Moved to todo ')
+        } else if(status === 'COMPLETED') {
+            SuccessMsg('Moved to completed ')
         }
         dispatch({
             type: types.MOVE_TODO, 
